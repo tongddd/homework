@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.数组方法里面的push pop unshift shift的作用分别是什么，他们的返回值又是什么？
+        // push 和 unshift都是插入数组 ,返回新数组的长度,push是在尾巴插,unshift是在头部插
+        // pop 和 shift 都是删除数据,pop是删除尾部第一个,shift是删除头部第一个,返回被删除的数
+
+
+
+        // 2.移除数组 arr["西瓜","香蕉","菠萝"]中除西瓜外的所有元素，不要使用第二个数组
+        if (true) {
+            let arr = ['西瓜', '香蕉', '菠萝'];
+            arr.shift();
+            console.log(arr);
+
+        }
+
+
+
+
+        // 3.移除数组 arr[1, 2, 3, 4, 2] 中的 2。不要直接修改数组 arr，结果返回新的数组
+        if (true) {
+            let arr = [1, 2, 3, 4, 2];
+            let arr2 = arr.slice(1, 2).concat(arr.slice(4))
+            console.log(arr);
+            console.log(arr2);
+        }
+
+        // 4.定义一个函数,能在数组 arr[1, 2, 3, 4, 2] 的 "2"后面添加元素 "jack"。不要直接修改数组 arr，结果返回新的数组即调用函数后返回的结果为[1, 2,'jack',3, 4, 2,'jack']
+        if (true) {
+            function intoJack(arr, num) {
+                newArr = []
+                for (let i = 0; i < arr.length; i++) {
+                    newArr.push(arr[i])
+                    if (arr[i] == num) {
+                        newArr.push("jack");
+                    }
+                }
+                return newArr;
+
+            }
+            console.log(intoJack([1, 2, 3, 4, 2], 2))
+        }
+
+
+
+
+        // 统计数组 var arr = ["a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c"]; 中 每个字母出现的次数，以对象的形式返回。
+        // {
+        //     a:xx,
+        //     b:xx,
+        // }
+        if (true) {
+            let obj = {};
+            let arr = ["a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c"]
+            for (let i = 0; i < arr.length; i++) {
+                if (obj[arr[i]]) {
+                    obj[arr[i]] += 1
+                }else{
+                    obj[arr[i]]=1;
+                }
+            }
+            console.log(obj)
+        }
+
+    </script>
+</body>
+
+</html>

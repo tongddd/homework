@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  /* 因为这里重置了border,使得tr可以设定border样式 */
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrap {
+  width: 1500px;
+  margin: 0 auto;
+}
+.wrap header {
+  height: 75px;
+  background: linear-gradient(to bottom, #fff, #e5e5e5);
+}
+.wrap header .logo {
+  float: left;
+  width: 79px;
+  height: 47px;
+  background: url(../img/小巨蛋LOGO.png) no-repeat;
+  margin-left: 72px;
+  margin-top: 15px;
+}
+.wrap header a {
+  width: 150px;
+  height: 75px;
+  font: 12px/50px "微软雅黑";
+  display: block;
+  text-decoration: none;
+}
+.wrap header .nav1 {
+  float: left;
+  width: 1050px;
+  height: 75px;
+  margin-left: 100px;
+}
+.wrap header .nav1 > li {
+  float: left;
+}
+.wrap header .nav1 > li .a1 {
+  border: 0px solid #000;
+  border-right-width: 1px;
+  border-image: linear-gradient(#fff, rgba(0, 0, 0, 0.2)) 1;
+  position: relative;
+}
+.wrap header .nav1 > li:hover .a1:hover {
+  background-color: #dcdcdc;
+}
+.wrap header .nav1 a {
+  display: block;
+  width: 150px;
+  height: 75px;
+  line-height: 75px;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.wrap header .nav1 li:last-child .a1 {
+  border: none;
+}
+.wrap header .nav1 li:hover .nav2 {
+  display: block;
+}
+.wrap header .nav1 li:hover a:hover {
+  background: #dcdcdc;
+}
+.wrap header .nav1 li .nav2 {
+  display: none;
+}
+.wrap header .nav1 li .nav2 a {
+  background: linear-gradient(to bottom, #fff, #e5e5e5);
+  border: 0px;
+}
+.wrap header .nav1 li .nav2 .nav3 {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -151px;
+}
+.wrap header .nav1 li .nav2 li {
+  position: relative;
+}
+.wrap header .nav1 li .nav2 li:hover .nav3 {
+  display: block;
+}
+.wrap nav {
+  height: 520px;
+  background: url(../img/流光溢彩.png);
+}
+
+/*# sourceMappingURL=index.css.map */

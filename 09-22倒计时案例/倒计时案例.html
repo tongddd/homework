@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+            background-color: #ccc;
+        }
+
+        div {
+            width: 900px;
+            margin-top: 200px;
+            position: absolute;
+            color: #ccc;
+            text-shadow: 2px 2px 3px rgba(255, 255, 255, .5), 2px 2px 1px rgba(0, 0, 0, .9);
+            left: 50%;
+            font-size: 70px;
+            text-align: center;
+            font-weight: 700;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="time"></div>
+    </main>
+    <script>
+        let div = document.querySelector("#time");
+        div.innerHTML = `距离双十一就剩<br/>${time("2022-10-1")}`
+        fontColor()
+        function time(godate) {
+            let nowTime = new Date();
+            let inputTime = new Date(godate);
+            let seconds = (inputTime - nowTime) / 1000;
+            let d = Math.floor(seconds / 60 / 60 / 24);
+            d = d <= 9 ? "0" + d : d;
+            let h = Math.floor(seconds / 60 / 60 % 24);
+            h = h <= 9 ? "0" + h : h;
+            let min = Math.floor(seconds / 60 % 60);
+            min = min <= 9 ? "0" + min : min;
+            let s = Math.floor(seconds % 60);
+            s = s <= 9 ? "0" + s : s;
+            return ` ${d} 天 ${h} 时 ${min} 分 ${s} 秒 `;
+        }
+        function fontColor() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            div.style.color = `rgb(${r},${g},${b})`;
+        }
+
+        // function randomNum(a, b) {
+        //     let max = Math.max(a, b);
+        //     let min = Math.min(a, b);
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
+        let set_Time = setInterval(function () {
+            div.innerHTML = `距离双十一就剩<br/>${time("2022-10-1")}`
+            fontColor()
+        }, 1000)
+    </script>
+</body>
+
+</html>

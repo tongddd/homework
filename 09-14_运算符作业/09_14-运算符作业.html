@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、 3 + 2 +“7”的结果是什么？3 + (2 + "7")的结果又是什么？这两个表达式输出的值是什么类型？
+        // 3 + 2 +"7" = 57;
+        // 3 + (2 + "7")  = 327;
+        // str
+
+        // 2、6 - false的结果是什么？
+        6
+
+        // 3、6 - "false"和6 + "false"的结果分别是什么？结果输出值是什么数据类型？
+        // 6
+        // number
+
+        // 4、请分析console.log(1 + - + + + - + 1)的结果？
+        2
+
+        // 5、下面代码分别输出什么？前自增(自减)与后自增(自减)的区别？
+            // let a = 1;
+            // let b = ++a + ++a;
+            // console.log(b);
+            5
+            // let a = 1;
+            // let b = a++ + a++;
+            // console.log(b);
+            3
+
+
+        // 6、分析下面代码，请问 j 和 y 分别是多少？(不要运行代码，自己分析后写出答案)
+        // var i = 100;
+        // i++;   //i = 101
+        // j = i++; //j=101  i=102
+        // y = ++j; //j=102 y =102
+
+
+        // 7、JS中哪些值通过Boolean对象转换出来的值为`false`?
+        // 0 null undefined false NaN "" 
+
+        // 8、分析下面代码的结果并解释原因。
+        // let a = 1;
+        // let b = 2;
+        // a是ture b是ture
+        // console.log(a && b); //找假找不到 返回 b 就是2
+        // console.log(a || b); //找真 找到了 a就不往后走了
+        
+
+        // 9、以下代码输出的结果分别是什么？
+        // let a = true && "" && 12306; 
+        // let b = false || "" || undefined || "bluej" || 12306; 
+
+        // console.log(a);//""
+        // console.log(b);// "bluej"
+
+        // 10、分析下面代码，分别输出什么？(以注释形式写在console.log后面)
+        // let str = "12306";
+        // let str1 = 1;
+        // let num = 12306;
+        // let boo = true;
+
+        // console.log(str == num);//true
+        // console.log(str === num);//false
+        // console.log(str1 == boo);//true
+        // console.log(str1 === boo);//false
+
+
+        // 提高题，非必做
+
+        // - 写出执行结果,并解释原因
+
+        var company = {
+            address: 'beijing'
+        }
+        var yideng = Object.create(company); //创建对象company赋值给了yideng
+       
+        delete yideng.address //删除address属性
+        console.log(yideng.address); //虽然yideng.address被删了,然后会往上爬根据yideng.prototype里的构造函数找到company.address,打印出北京把我猜的
+
+        // - 写出执行结果,并解释原因
+
+        var x = 1;
+        if (function f() { }) {
+            x += typeof f;
+        }
+        console.log(x) 
+
+        // 1.function f() { }不属于0 null undefined false NaN "" 所以是true 
+        // 2.正常来说typeof functionf(){}的结果应该是function,但是这个函数f写在了if条件判断里,导致代码里的type f返回的是undefined;
+        // 3. x = 1 +"undefined" 
+        // 4 "1undefined"
+        document.body.getAttribute
+    </script>
+</body>
+
+</html>

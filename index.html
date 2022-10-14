@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>个人网页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3619909_1ekjsoid44v.css">
+	<link rel="stylesheet" href="./css/animate.css">
+	<script src="http://at.alicdn.com/t/c/font_3619909_39s493oesww.js"></script>
+	<style type="text/css">
+		.icon {
+			width: 1em;
+			height: 1em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.clearfix:after {
+			content: "";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+
+
+		body {
+			background: url("./img/wallhaven-48dep2.png") no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			position: relative;
+			min-width: 1200px;
+		}
+
+		.time {
+			position: fixed;
+			width: 300px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border-radius: 5px;
+			color: #fff;
+			background-color: rgba(255, 255, 255, .2);
+			right: 5px;
+			top: 5px;
+			cursor: default;
+		}
+
+		.content {
+			display: flex;
+			justify-content: space-between;
+			width: 900px;
+			overflow: hidden;
+			/* height: 1000px; */
+			margin: 100px 0 0 200px;
+			border-radius: 10px;
+			background-color: rgba(255, 255, 255, .6);
+			transition: all .5s;
+			/*box-shadow: 0px 0px 20px rgba(0,0,0,0.3);*/
+		}
+
+		.content img {
+			/* float: left; */
+			width: 200px;
+			height: 200px;
+			margin: 150px 0 0 80px;
+			border-radius: 100px;
+
+		}
+
+		.content:hover {
+			transform: translateY(-1px);
+			box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+		}
+
+		.content_r {
+			width: 500px;
+			margin: 40px 60px 0 0;
+		}
+
+		.content_l {
+			float: left;
+			width: 100%;
+			text-align: center;
+		}
+
+		.content_l h2 {
+			letter-spacing: 2px;
+			font-family: 'Work Sans', sans-serif;
+			word-spacing: 2px;
+			color: #351c75;
+			font-weight: 700;
+			font-size: 40px;
+			cursor: default;
+		}
+
+		.content_l h2 .iconfont {
+			font-size: 35px;
+			margin-right: 5px;
+			color: #351c75;
+
+		}
+
+		.cc {
+			margin-top: 10px;
+			color: #1F2023;
+			font-size: 18px;
+		}
+
+		.color_1 {
+			color: #4855EC;
+			font-size: 18px;
+		}
+
+		.deeppink {
+			color: deeppink;
+		}
+
+		.link {
+			margin-top: 30px;
+			display: flex;
+			flex-direction: column;
+			/* flex-wrap: wrap;
+			justify-content: space-between; */
+			/* background-color: rgba(66, 66, 66, 0.3); */
+			border-radius: 15px;
+			/* height: 900px; */
+			/* align-content: flex-start; */
+
+		}
+
+		.link h3 {
+			width: 250px;
+			margin: 15px auto 15px;
+			letter-spacing: 2px;
+			font-family: 'Work Sans', sans-serif;
+			word-spacing: 2px;
+			font-size: 25px;
+			color: #351c75;
+			border-bottom: 2px solid #351c75;
+			cursor: default;
+		}
+
+		.link h3>.iconfont,
+		.link h3>.icon {
+			font-size: 25px;
+			margin-right: 3px;
+
+
+		}
+
+		.link a {
+			position: relative;
+			display: block;
+			width: 400px;
+			height: 50px;
+			margin: 5px 5px 5px 0;
+			/*	padding: 0 15px;*/
+			color: rgba(0, 0, 0, 0.9);
+			line-height: 45px;
+			font-size: 20px;
+			font-weight: 700;
+			transition: all 0.4s;
+			box-sizing: border-box;
+			text-align: left;
+
+		}
+
+		/* .link a::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0px;
+			height: 5px;
+			background-color: #000;
+			transition: all 1s;
+		}
+		.link a:hover::after{
+            width: 75%;
+		} */
+
+		/* .link a:hover {
+			transform: scale(1.1);
+			animation: headShake ease-in-out .5s;
+		} */
+
+		.deeppink_1 {
+			background-color: deeppink;
+		}
+
+		.dodgerblue {
+			background-color: dodgerblue;
+		}
+
+		.magenta {
+			background-color: magenta;
+		}
+
+		.orange {
+			background-color: orange;
+		}
+
+		@keyframes play {
+			0% {}
+
+			50% {
+				transform: translateY(-5px);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes headShake {
+			0% {
+				-webkit-transform: translateX(0);
+				transform: translateX(0)
+			}
+
+			6.5% {
+				-webkit-transform: translateX(-6px) rotateY(-9deg);
+				transform: translateX(-6px) rotateY(-9deg)
+			}
+
+			18.5% {
+				-webkit-transform: translateX(5px) rotateY(7deg);
+				transform: translateX(5px) rotateY(7deg)
+			}
+
+			31.5% {
+				-webkit-transform: translateX(-3px) rotateY(-5deg);
+				transform: translateX(-3px) rotateY(-5deg)
+			}
+
+			43.5% {
+				-webkit-transform: translateX(2px) rotateY(3deg);
+				transform: translateX(2px) rotateY(3deg)
+			}
+
+			50% {
+				-webkit-transform: translateX(0);
+				transform: translateX(0)
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<img src="./img/微信图片_20220822113251.jpg" alt="">
+		<div class="content_r clearfix">
+			<div class="content_l clearfix">
+				<h2><i class="iconfont icon-zuoye3"></i>- HomeWork -</h2>
+				<div class="link clearfix">
+					<h3><i class="iconfont icon-java-script"></i>Javascript</h3>
+					<a href="./10-14-动态渲染轮播图/index.html" target="_blank">202201014_动态渲染轮播图</a>
+					<a href="./10-11-商品放大镜作业/index.html" target="_blank">202201011_商品放大镜</a>
+					<a href="./10-09-鼠标跟随作业/小球跟随作业.html" target="_blank">202201009_小球跟随</a>
+					<a href="./09-30-无缝轮播图/index.html" target="_blank">20220930_无缝轮播图作业</a>
+					<a href="./09-30-富豪榜作业/index.html" target="_blank">20220930_富豪榜作业</a>
+					<a href="./09-29-小米菜单栏/index.html" target="_blank">20220929_jsdom小米菜单栏</a>
+					<a href="./09-28-选项卡作业/选项卡.html" target="_blank">20220928_jsdom操作选项卡</a>
+					<a href="./09-27-DOM操作作业/表格.html" target="_blank">20220927_jsdom操作表格</a>
+					<a href="./09-26-js基础测试/20220926_胡逸桐_js基础测试_V2.md" target="_blank">20220926_js基础测试</a>
+					<a href="./09-22倒计时案例/倒计时案例.html" target="_blank">2022_09-22_倒计时案例</a>
+					<a href="./09-21字符串作业/09_21字符串作业.html" target="_blank">2022_09-21_字符串作业(猜大小)</a>
+					<a href="./09-15_流程控制作业/09-15_流程控制作业.html" target="_blank">2022_09-15_流程控制作业</a>
+					<h3><i class="iconfont icon-sass"></i>HTML-CSS</h3>
+					<a href="http://xiabanba.gitee.io/group-purchasing">2022_09-06_团购项目</a>
+					<a href="./08-31_加载作业/轮播图作业.html" target="_blank">2022_08-31_轮播图</a>
+					<a href="./08-31_加载作业/加载作业第二版.html" target="_blank">2022_08-31_加载效果_2</a>
+					<a href="./08-31_加载作业/加载效果作业.html" target="_blank">2022_08-31_加载效果</a>
+					<a href="./08-30_太极图旋转作业/胡逸桐太极图旋转作业.html" target="_blank">2022_08-30_太极图旋转</a>
+					<a href="./08-24_项目_艺术家/index.html" target="_blank">2022_08-24_艺术家项目</a>
+					<a href="./08-23_小巨蛋作业/vote.html" target="_blank">2022_08-23_小巨蛋投票页</a>
+					<a href="./08-23_小巨蛋作业/index.html" target="_blank">2022_08-23_小巨蛋首页</a>
+					<a href="./08-22_小巨蛋css转sass/index.html" target="_blank">2022_08-22_css转sass</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="time">
+
+	</div>
+	<script>
+		// 每个类添加触摸动画效果
+		Time();
+		const a = document.querySelectorAll("a");
+		for (var i = 0; i < a.length; i++) {
+			a[i].addEventListener("mouseover", function () {
+				this.classList.add("animate__animated", "animate__pulse");
+			})
+			a[i].addEventListener("mouseout", function () {
+				this.classList.remove("animate__animated", "animate__pulse");
+			})
+		}
+		// 时间
+		function Time() {
+			var newDate = new Date();
+			var year = newDate.getFullYear();
+			var month = newDate.getMonth() + 1;
+			month = month <= 9 ? "0" + month : month;
+			var date = newDate.getDate();
+			date = date <= 9 ? "0" + date : date;
+			var day = newDate.getDay();
+			var h = newDate.getHours();
+			h = h <= 9 ? "0" + h : h;
+			var m = newDate.getMinutes();
+			m = m <= 9 ? "0" + m : m;
+			var s = newDate.getSeconds();
+			s = s <= 9 ? "0" + s : s;
+			var arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六",]
+			var showDate = `${year}-${month}-${date} ${arr[day]} ${h}:${m}:${s}`;
+			document.querySelector(".time").innerHTML = showDate;
+		}
+		setInterval(Time, 1000)
+
+		// 禁止选中,禁止右键
+		document.addEventListener("selectstart", function (e) {
+			e.preventDefault();
+		})
+		document.addEventListener("contextmenu", function (e) {
+			e.preventDefault();
+		})
+
+
+	</script>
+</body>
+
+</html>

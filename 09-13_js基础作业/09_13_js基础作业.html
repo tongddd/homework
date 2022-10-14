@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //1.JS是什么
+    javascript是脚本语言, 给网页添加动态功能
+
+    //2.JS的数据类型有哪几种，哪些是简单类型变量，哪些是复杂类型变量，它们有什么区别
+    简单类型: 字符串(String), 数字(Number), 布尔(Boolean), 空(Null), undefined, Symbol
+    复杂类型: Array, Object, function(){}
+      复杂数据类型功能和方法多
+
+      //3.用代码来表示具体如何定义JS的各种类型变量
+    let str = 'str';
+    let num = 123;
+    let bl = false;
+    let n = null;
+    let sy = new Symbol('123');
+    let udf;
+    let arr = [];
+    let obj = new Object;
+    let fn = function () { };
+
+    //4.undefined和Null的区别
+    null是定义后赋值null;
+    undefined是定义变量后不赋值;
+
+    //5.script标签写在页面头部和底部，有何区别
+    页面从上到下加载, 单纯将script写在上面的话, 会读不到DOM
+
+    //6.如何保证在页面基本结构和样式加载后，再执行我们的JS脚本
+    script写最下面, 或者给window添加load事件, 加载后再执行js
+
+    //7.如何判断一个变量是属于哪种变量类型（字符串、数值、布尔值、Null、undefined、对象、数组、函数）
+    typeof简单数据类型
+    instanceof复杂数据类型
+    Object.prototype.toString.call(数据类型).silce(8, -1)
+    //8.JS的注释写法有哪几种，有何区别
+    单行用//
+    多行用/* */
+
+    //9.javascript引入页面有几种形式
+    行内, 内嵌, 外链
+
+    //10.var 的意义何在
+    定义一个元素, 没啥意义后面用Let
+
+    //11.已知数A与B，由键盘输入AB的值，交换它们的值，并输出。
+    //提示，获取用户输入信息，可以使用 var user_input = prompt("请输入数字");
+    let a = prompt('输入a');
+    let b = prompt('输入b');
+    let temp = a;
+    a = b;
+    b = a;
+    console.log(a, b);
+  </script>
+</body>
+
+</html>

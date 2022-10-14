@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 猜数字游戏,生成一个随机数1-10，进入页面定义一个函数让用户输入猜的数字，如果猜中了就返回猜中了，猜小了就提示猜小了，猜大了也进行提示，用户一共有五次机会；
+        while (true) {
+            let num = prompt("猜数字了请输入一个1`10的数字") * 1;
+            let numPattern = /^([1-9]|10)$/;
+            if (numPattern.test(num)) {
+                let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                let random = Math.floor(Math.random() * 9);
+                let randonum = arr[random];
+                console.log(randonum);
+                let count = 5;
+                while (true) {
+                    if (!numPattern.test(num)) {
+                        alert("输入的不符合规定,重新输入!");
+                        num = prompt("猜数字了请输入一个1`10的数字") * 1;
+                        continue;
+                    }
+                    if (count == 0) {
+                        alert(`没机会了,答案是${randonum}`)
+                        break;
+                    }
+                    else if (num > randonum) {
+                        count--;
+                        alert(`猜大了,还剩下${count}次机会`)
+                        num = prompt("猜数字了请输入一个1`10的数字") * 1;
+                    }
+                    else if (num < randonum) {
+                        count--;
+                        alert(`猜小了,还剩下${count}次机会`)
+                        num = prompt("猜数字了请输入一个1`10的数字") * 1;
+                    } else if (num == randonum) {
+                        count--;
+                        alert(`猜中了,用了${5 - count}次机会`)
+                        break;
+                    } else {
+                        alert("输入的不符合规定,重新输入!");
+                        num = prompt("猜数字了请输入一个1`10的数字") * 1;
+                    }
+                }
+                break;
+            }
+            alert("输入的不符合规定,重新输入!");
+        }
+    </script>
+</body>
+
+</html>

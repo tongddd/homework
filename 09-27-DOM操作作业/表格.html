@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table border="1">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>price</th>
+    </tr>
+    <!-- <tr>
+      <td>1</td>
+      <td>iPhone14</td>
+      <td>5999</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>iPhone14 Pro</td>
+      <td>7999</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>iPhone14 Pro Max</td>
+      <td>8999</td>
+    </tr> -->
+  </table>
+
+  <script>
+    // 使用下面数据, 生成一个完整数据的表格
+    let data = [
+      { id: 1, name: "iPhone14", price: 5999 },
+      { id: 2, name: "iPhone14 Pro", price: 7999 },
+      { id: 3, name: "iPhone14 Pro Max", price: 8999 }
+    ];
+    let table = document.querySelector("table");
+    data.map((item) => {
+      let tr = document.createElement('tr');
+      let { id, name, price } = item;
+
+      // 方法1 用innerHTML
+      tr.innerHTML = `
+      <td>${id}</td>
+      <td>${name}</td>
+      <td>${price}</td>
+      `
+      table.appendChild(tr);
+
+      
+      //方法2 不用innerHTML方法
+      // id
+      // let td_id = document.createElement("td");
+      // let td_id_text = document.createTextNode(`${id}`)
+      // td_id.appendChild(td_id_text);
+      // tr.appendChild(td_id)
+      // // name
+      // let td_name = document.createElement("td");
+      // let td_name_text = document.createTextNode(`${name}`)
+      // td_name.appendChild(td_name_text);
+      // tr.appendChild(td_name)
+      // // price
+      // let td_price = document.createElement("td");
+      // let td_price_text = document.createTextNode(`${price}`)
+      // td_price.appendChild(td_price_text);
+      // tr.appendChild(td_price)
+      // table.appendChild(tr)
+
+
+    })
+
+
+  </script>
+</body>
+
+</html>

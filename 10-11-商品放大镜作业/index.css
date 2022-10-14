@@ -1,0 +1,53 @@
+.show{
+    visibility: visible!important;
+}
+main{
+    width: 400px;
+    margin: 20px auto;
+}
+.top>ul{
+    position: relative;
+    height: 400px;
+}
+.top>ul li {
+    display: flex;
+    position: absolute;
+    left: 40px;
+    top: 0;
+    visibility: hidden;
+}
+
+.box1 {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+.box1 .mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 200px;
+    background-color: #FFD372;
+    opacity: 0.3;
+    display: none;
+}
+.box2 {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    display: none;
+}
+.box2>img{
+    width: 200%;
+}
+.bottom >ul{
+    display: flex;
+}
+.bottom >ul>li{
+    width: 120px;
+    height: 120px;
+}
+.bottom >ul>li>img{
+    width: 100%;
+}

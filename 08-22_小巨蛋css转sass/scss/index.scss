@@ -1,0 +1,121 @@
+@import "reset.scss";
+
+.wrap {
+    width: 1500px;
+    margin: 0 auto;
+
+    header {
+        height: 75px;
+        background: linear-gradient(to bottom, #fff, #e5e5e5);
+
+        .logo {
+            float: left;
+            width: 79px;
+            height: 47px;
+            background: url(../img/小巨蛋LOGO.png) no-repeat;
+            margin-left: 72px;
+            margin-top: 15px;
+        }
+
+        a {
+            width: 150px;
+            height: 75px;
+            font: 12px/50px "微软雅黑";
+            display: block;
+            text-decoration: none;
+        }
+
+        .nav1 {
+            float: left;
+            width: 1050px;
+            height: 75px;
+            margin-left: 100px;
+
+            >li {
+                float: left;
+
+                .a1 {
+                    border: 0px solid #000;
+                    border-right-width: 1px;
+                    border-image: linear-gradient(#fff, rgba(0, 0, 0, .2)) 1;
+                    position: relative;
+                }
+
+                &:hover {
+                    .a1{
+                        &:hover{
+                        background-color: #dcdcdc;
+                            
+                        }
+                    } 
+                }
+            }
+
+            a {
+                display: block;
+                width: 150px;
+                height: 75px;
+                line-height: 75px;
+                color: black;
+                font-size: 14px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            li {
+                &:last-child {
+                    .a1 {
+                        border: none;
+                    }
+                }
+
+                &:hover {
+                    .nav2 {
+                        display: block;
+                    }
+
+                    a {
+                        &:hover {
+                            background: #dcdcdc;
+
+                        }
+                    }
+                }
+
+                .nav2 {
+                    display: none;
+
+                    a {
+                        background: linear-gradient(to bottom, #fff, #e5e5e5);
+                        border: 0px;
+                    }
+
+                    .nav3 {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        right: -151px;
+                    }
+
+                    li {
+                        position: relative;
+
+                        &:hover {
+                            .nav3 {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    nav {
+        height: 520px;
+        background: url(../img/流光溢彩.png);
+    }
+}

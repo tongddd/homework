@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        /***********************************
+            1.请写出javascript的三种循环
+        ***********************************/
+        // for while dothile
+        document.write(" <br/>1.请写出javascript的三种循环<br/>")
+        document.write(" 答:for while dothile <br/>")
+
+
+        /***********************************
+            2.请写出break和continue作用和区别
+        ***********************************/
+
+        document.write(" <br/>2.请写出break和continue作用和区别<br/>")
+        document.write(" 答:break中断流程控制,contiune只会中断这次循环接着下次循环继续 <br/>")
+        /***********************************
+            3.循环输出1-100 里奇数
+        ***********************************/
+        document.write("<br/>3.循环输出1-100 里奇数<br/>")
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 != 0) {
+                document.write(i + ",");
+            }
+        }
+        document.write("<br/>")
+
+        /***********************************
+            4.有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的前20项之和。
+        ***********************************/
+        document.write(" <br/>4.有一分数序列:2/1,3/2,5/3,8/5,13/8,21/13...求出这个数列的前20项之和。<br/>")
+        let i = 1;
+        let x = 2;
+        let y = 1;
+        let sum = 0;
+        let tmp;
+        while (i <= 20) {
+            document.write(`第${i}个数为:${x}/${y}    `)
+            sum += x / y;
+            tmp = y;
+            y = x;
+            x = x + tmp;
+            i++;
+            document.write(`<br/>`)
+        }
+        document.write(`总和为${sum}<br/> `)
+
+        /***********************************
+            5.有一座桥，当你身上所拥有的钱大于30000时，每过一次桥则需要支付3000元。当你身上的钱小于或等于30000时，每过一次桥则需要支付你身上10%的钱。已知有一个人身上有33000元，问此人能过这座桥多少次之后，身上的钱会少于100块?
+        ***********************************/
+        document.write(" <br/>5.有一座桥，当你身上所拥有的钱大于30000时，每过一次桥则需要支付3000元。当你身上的钱小于或等于30000时，每过一次桥则需要支付你身上10%的钱。已知有一个人身上有33000元，问此人能过这座桥多少次之后，身上的钱会少于100块?<br/>")
+        let money = 33000;
+        for (let i = 1; i <= 200; i++) {
+            if (money > 30000) {
+                money = money - 3000;
+            } else {
+                money = money - money * 0.1;
+            }
+            if (money < 100) {
+                document.write(`答:我还剩${money}元,一共过了${i}次桥<br/>`)
+                break;
+            }
+        }
+
+        /***********************************
+            6.小明去存1000钱，每天会产生1%的利息，求问，30天后，小明可以拿回多少钱
+        ***********************************/
+        document.write(" <br/>6.小明去存1000钱，每天会产生1%的利息，求问，30天后，小明可以拿回多少钱?<br/>")
+
+        let save_money = 1000;
+        for (let i = 1; i <= 30; i++) {
+            save_money += save_money * 0.01;
+        }
+        document.write(`答:一共${save_money}元<br/>`)
+
+        /***********************************
+            7.黑白棋   奇数行 && 奇数列 || 偶数行 && 偶数列
+        ***********************************/
+        document.write(" <br/>7.黑白棋   奇数行 && 奇数列 || 偶数行 && 偶数列<br/>")
+        //    行
+        let index = false;
+        document.write(`<table border='1' cellpadding='0'  cellspacing=0>`)
+        for (let i = 0; i < 6; i++) {
+        document.write(`<tr>`)
+            // 列
+            for (let j = 0; j < 5; j++) {
+                if(index){
+                    document.write(`<td style="background-color: #000;width: 20px; height: 20px;" ></td>`)
+                    index = false;
+                }else{
+                    document.write(`<td style="background-color: #fff;width: 20px; height: 20px;" style=" ;:" ></td>`)
+                    index=true
+                }
+            }
+            document.write(`<td>`)
+        }
+        document.write(`</td>`)
+    </script>
+</body>
+
+</html>

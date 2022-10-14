@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            position: relative;
+        }
+
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        document.addEventListener("touchstart", e => {
+            if (e.target.classList.contains("box")) {
+                let nowY = e.touches[0].clientY - e.target.offsetTop
+                let nowX = e.touches[0].clientX - e.target.offsetLeft
+                e.target.addEventListener("touchmove", (event) => {
+                    e.target.style.top = event.touches[0].clientY - nowY + "px";
+                    e.target.style.left = event.touches[0].clientX - nowX + "px";
+                })
+            }
+        })
+
+    </script>
+</body>
+
+</html>

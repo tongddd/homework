@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1 小名升级版
+        if (true) {
+            let money = 1000;
+            function fn(money) {
+                //已开户给10块钱
+                let day = 1;
+                money += 10;
+                for (let i = 1; i <= 30; i++) {
+                    // if(i%7==0||i%7==6){
+                    //     continue
+                    // }
+                    if (day == 6) {
+                        //周六不给钱
+                        day++;
+                        continue;
+                    } else if (day == 7) {
+                        //周日不给钱
+                        day = 1;
+                        continue;
+                    } else {
+                        //每天多1%
+                        money += money * 0.01;
+                        day++;
+                    }
+                }
+                return money;
+            }
+            console.log(fn(money));
+        }
+
+        // 2 输入一整数A,判断是否素数(除了自己和1之外,不能被其他数除数)
+        if (true) {
+            function fn(num) {
+                if (num <= 2) {
+                    return "不是素数";
+                }
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        console.log('不是素数');
+                        break;
+                    }
+                }
+                return "素数";
+
+            }
+            let result = fn(3);
+            console.log(result);
+        }
+
+
+        //3 将100元整抄换成20元,10元,5元,2元,1元零钱,要求零钱总张数为30张,求有多少种换法?
+        if (true) {
+            function change(money) {
+                let con = 0;
+                for (let i = 0; i <= parseInt(money / 20); i++) {
+                    for (let j = 0; j <= parseInt(money / 10); j++) {
+                        for (let k = 0; k <= parseInt(money / 5); k++) {
+                            for (let h = 0; h <= parseInt(money / 2); h++) {
+                                for (let y = 0; y <= parseInt(money / 1); y++) {
+                                    if (i + j + k + h + y == 30 && i * 20 + j * 10 + k * 5 + h * 2 + y * 1 == 100) {
+                                        con += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return con;
+            }
+            console.log(change(100))
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: auto;
+        }
+
+        .box>.head {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box>.head>li {
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #87ceeb;
+        }
+
+        .main {
+            position: relative;
+        }
+
+        .main>li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 178px;
+            background-color: #87ceeb;
+        }
+
+        .mainActive {
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="head">
+            <li class="active">标题一</li>
+            <li>标题二</li>
+            <li>标题三</li>
+        </ul>
+
+        <ul class="main">
+            <li class="mainActive">内容一</li>
+            <li>内容二</li>
+            <li>内容三</li>
+        </ul>
+    </div>
+    <script>
+        //方法1
+        // let ul_head = document.querySelector(".head");
+        // let ul_main = document.querySelector(".main");
+        // for (let i = 0; i < ul_head.children.length; i++) {
+        //     ul_head.children[i].setAttribute(`data-index`, i);
+        // }
+        // ul_head.addEventListener("click", e => {
+        //     let index = e.target.dataset.index
+        //     document.querySelector('.active').classList.remove('active');
+        //     e.target.classList.add('active');
+        //     document.querySelector('.mainActive').classList.remove('mainActive');
+        //     ul_main.children[index].classList.add("mainActive");
+        // })
+
+        //方法2
+        let head_lis = document.querySelectorAll(".head li");
+        let main_lis = document.querySelectorAll(".main li");
+        // let index = 0;
+        for (let i = 0; i < head_lis.length; i++) {
+            head_lis[i].addEventListener("click", function () {
+                document.querySelector(".active").classList.remove("active");
+                // head_lis[index].classList.remove("active");
+                this.classList.add("active");
+                document.querySelector(".mainActive").classList.remove("mainActive");
+                // main_lis[index].classList.remove("mainActive");
+                main_lis[i].classList.add("mainActive")
+                // index = i;
+            })
+
+        }
+    </script>
+</body>
+
+</html>
